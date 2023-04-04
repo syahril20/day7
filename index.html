@@ -7,66 +7,193 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <style>
+    .mobileNav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: aliceblue;
+        transition: all 2s ease;
+    }
+
+    .mobileNav-active{
+        display: none;
+    }
+
+    .mobileNav a{
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+        text-decoration: none;
+        margin: 5px;
+        padding: 5px;
+    }
+    
+    .mobileNav .buttonContact{
+        border-radius: 10px;
+        padding: 5px 20px; 
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        margin-right: 10px;
+    }
+    .burger{
+        display: flex;
         
+    }
+
+    .toggle-button{
+        position: absolute;
+        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        margin-top: 5px;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+
+    .toggle-button .bar {
+        height: 3px;
+        width: 130%;
+        background-color: white;
+        border-radius: 10px;
+        transition: 2ms;
+    }
+
+    .nav-right{
+    display: flex;
+    flex-direction: row;
+    }
+
+    .nav-right .burger{
+            display: none;
+        }
+
+    @media only screen and (max-width: 650px) {
+        .nav-left a {
+            display: none;
+        }
+
+        nav{
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-right .right{
+            display: none;
+        }
+
+        .nav-right .burger{
+            display: flex;
+            align-items: center;
+            margin-right: 60px;
+        }
+
+    }
+
+
+    .box{
+    background-color: #218d98;
+    height: 100px;
+    width: 100px;
+  }
+  
+  .transform{
+    transition: all 2s ease;
+  }
+  
+  .transform-active{
+    background-color: #45cee0;
+    height: 200px;
+  }
     </style>
     <link rel="stylesheet" href="./css/style.css">
-    <body class="bodyIndex">
+    <body class="">
+
+        <div class="box transform">
+        </div>
+        
+        <input type="button"
+               id="button"
+               value="Click Me">
+               </input>
+                   
+        
         <nav>
             <div class="nav-left">
                 <ul>
-                    <img src="./assets/logo.png" alt="logo" >
+                    <img class="dumbLogo" src="./assets/logo.png" alt="logo" >
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./myProject.html">My Project</a></li>
                 </ul>
             </div>
             <div class="nav-right">
-                <a href="./contactMe.html">Contact Me</a>
+                <div>
+                    <a class="right" href="./contactMe.html">Contact Me</a>
+                </div>
+                <div class="burger" >
+                    <button type="button" id="button" href="" class="toggle-button" >
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
             </div>
         </nav>
-    
-    <div class="body">
-        <div id="box" class="box">
-            <div id="content" class="content">
-                <div class="grid-container">
-                    <div class="item1">
-                        <h1>Hy Welcome to my hut</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aliquam obcaecati quis accusamus, dicta nam nostrum  consequuntur itaque culpa modi nihil dignissimos hic debitis laborum explicabo? Odit perspiciatis veritatis iste alias magni     labore esse eius. Amet, sequi tenetur porro officia sint, sapiente, modi architecto consectetur rem in dolores placeat quos.</p> 
-                    </div>
-                    <div class="item2">
-                        <a href="contactMe.html" class="button">Content</a>
-                        <a>Download CV</a>
-                            <a href="#" target="_blank">
-                                <img src="./assets/download.png" alt="Hooh" class="downLogo"/>
-                            </a>
-                    </div>
-                    <div id="mediaSocial" class="item3">
-                        <a href="https://www.linkedin.com/in/syahril-ramadhan-410385250/">
-                            <img src="./assets/linkedin.png" class="medsos" alt="">
-                        </a>
-                        <a href="https://www.instagram.com/syhrlkywr/">
-                            <img src="./assets/instagram.png" class="medsos" alt="">
-                        </a>
-                        <a href="https://web.facebook.com/Rodyulo/">
-                            <img src="./assets/facebook.png" class="medsos" alt="">
-                        </a>
-                        <a href="https://www.twitter.com/">
-                            <img src="./assets/twitter.png" class="medsos"alt="">
-                        </a>
-                    </div>
-                    <div id="card" class="item4">
-                        <div
-                        id="profile">
+        <div class="mobileNav" id="mobileNav">
+            <a href="./index.html">Home</a>
+            <a href="./myProject.html">My Project</a>
+            <a class="buttonContact" href="./contactMe.html">Contact Me</a>
+        </div>
+
+        <div class="bodyContent shadow">
+            <div>
+                <div class="grid1">
+                    <h1>Hy, Welcome to my hut</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aliquam obcaecati quis accusamudicta namnostrum  consequuntur itaque culpa modi nihil dignissimos hic debitis laborum explicabo? Odperspiciatisveritatis iste alias magni     labore esse eius. Amet, sequi tenetur porro officia sinsapiente, modi architectoconsectetur rem in dolores placeat quos.</p> 
+                </div>
+                <div class="grid2">
+                    <a href="contactMe.html" class="button">Content</a>
+                    <a>Download CV</a>
+                    <a href="#" target="_blank">
+                        <img src="./assets/download.png" alt="Hooh" class="downLogo"/>
+                    </a>
+                </div>
+                <div class="grid3">
+                    <a href="https://www.linkedin.com/in/syahril-ramadhan-410385250/">
+                        <img src="./assets/linkedin.png" class="medLogo" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/syhrlkywr/">
+                        <img src="./assets/instagram.png" class="medLogo" alt="">
+                    </a>
+                    <a href="https://web.facebook.com/Rodyulo/">
+                        <img src="./assets/facebook.png" class="medLogo" alt="">
+                    </a>
+                    <a href="https://www.twitter.com/">
+                        <img src="./assets/twitter.png" class="medLogo"alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="prof">
+                <div class="grid4 shadow">
+                    <div id="profile">
                         <img src="./assets/profile.jpg" class="profile"/>
-                        </div>
-                        <div id="name" class="name">
-                            <p><b>Syahril Ramadhan</b></p>
-                            <p>Fullstack Developer</p>
-                        </div>
                     </div>
-                  </div>
+                    <div>
+                        <p><b>Syahril Ramadhan</b></p>
+                        <p>Fullstack Developer</p>
+                    </div> 
+                </div>
             </div>
         </div>
-    </div>
-    </body>
 
+    </body>
+    <script src="./js/scripts.js">
+        $("#button").click(function () {
+    $(".transform").toggleClass("transform-active");
+  });
+    </script>
 </html>

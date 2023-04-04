@@ -1,3 +1,131 @@
+
+
+
+/* GLOBAL */
+.shadow{
+    box-shadow: 0 5px 10px rgb(190, 190, 190);
+}
+
+body{
+    background-color: #f3f3f3;
+    margin: 0;
+    font-family: comic sans ms;
+}
+/* GLOBAL */
+
+/* Index */
+.bodyContent{
+    margin: 10%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+.bodyItem{
+    background-color: aliceblue;
+}
+
+.grid1{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: justify;
+}
+    
+.grid2{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.grid3{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    padding-top: 20px;
+    text-decoration:none;
+    border: none;
+}
+
+.medLogo{
+    width: 45px;
+}
+
+.tengah{
+    margin-right:25px;
+}
+
+.prof{
+    display: flex;
+    align-items: center;
+}
+
+.grid4{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    background-color: rgb(235, 235, 235);
+    align-items: center;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.button{
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.button:hover{
+    background-color: rgb(49, 187, 229);
+}
+
+.downLogo{
+    width: 20px;
+    height: 20px;
+}
+    
+.profile{
+    width: 300px;
+    border-radius: 10px 10px 0 0;
+}
+
+@media only screen and (max-width: 925px) {
+    .bodyContent{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid4{
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .grid3{
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .prof{
+        display: flex;
+        justify-content: center;
+    }
+  }
+
+
+    
+/* Index */
+
 /* MY DETAIL */
 .bodyDetail{
     margin: 0 auto;
@@ -309,90 +437,7 @@
 
 /* Contact ME */
 
-/* Index */
-.body{
-    
-    padding: 25px 10%;
-}
 
-.bodyIndex{
-    background-color: #d0d0d0;
-    margin: 0;
-    font-family: comic sans ms;
-}
-
-.box{
-    justify-content: center;
-    background-color: white; 
-    border-radius: 10px; 
-    box-shadow: 0 0 10px black;
-}
-
-.content{
-    padding: 5% 10%; 
-    text-align: justify;
-    
-}
-
-.button{
-    border-radius: 20px;
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-    margin-right: 10px;
-}
-
-.button:hover{
-    background-color: rgb(49, 187, 229);
-}
-
-
-.item3{
-    display: flex;
-}
-
-.medsos{
-    width: 40px;
-    padding-right: 25px;
-}
-
-.item4{
-    margin: auto;
-    background-color: #C6FDFF;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 15px 30px rgb(96, 96, 96);
-    grid-row-start: 1;
-    grid-row-end: 4;
-    grid-column-start: 2;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 50px;
-  }
-
-.downLogo{
-    width: 20px;
-    height: 20px;
-}
-
-.profile{
-    width: 300px;
-    border-radius: 10px 10px 0 0;
-}
-
-.name{
-    text-align: center;
-    padding: 5px;
-}
-
-/* Index */
 
 /* Navbar */
 
@@ -402,8 +447,7 @@ nav {
     justify-content: space-between;
     background-color: #dbdbdb;
     padding: 0 40px;
-    font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 nav img {
@@ -426,10 +470,10 @@ nav img {
     color: black;
 }
 
-.nav-right a {
+
+.nav-right .right {
     border-radius: 10px;
-    padding: 8px 20px; 
-    margin-top: 20px;
+    padding: 5px 20px; 
     background-color: black;
     color: white;
     text-decoration: none;
