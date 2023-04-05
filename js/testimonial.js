@@ -34,13 +34,14 @@ class Blog {
 
     displayBlog() {
         return `
-              <div class="card shadow" id="testi">
-              <div class="testiContent">  
+            <div class="card shadow" id="testi">
+             <div class="testiContent">  
               <img src="${this.image}" alt="" class="testiImg">
               <p class="quotes">${this.quotes}</p>
               <p class="author">${this.author}</p>
-              </div>
-              `;
+             </div>
+            </div>
+            `;
     }
 }
 
