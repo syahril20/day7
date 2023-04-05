@@ -1,9 +1,9 @@
 let blogs = []
 
-function test(){
+function test() {
     const today = new Date();
     const monthSet = new Date().setMonth(today.getMonth() + 3);
-    const date = today.toLocaleDateString();  
+    const date = today.toLocaleDateString();
     let data = {
         title: "Phyton Jadi Bahasa Pemrograman Terpopuler di Dunia, Ini Alasannya",
         start: date,
@@ -20,7 +20,7 @@ function test(){
     renderBlog()
 }
 
-function getBlog(event){
+function getBlog(event) {
     event.preventDefault()
 
     let title = document.getElementById("title").value
@@ -32,26 +32,26 @@ function getBlog(event){
     let next = document.getElementById("nextBox").checked
     let react = document.getElementById("reactBox").checked
     let typescript = document.getElementById("typeBox").checked
-    
+
     image = URL.createObjectURL(image[0]);
 
-    if(title == "") {
+    if (title == "") {
         return alert("title Tidak Boleh Kosong")
-    } else if(start == "") {
+    } else if (start == "") {
         return alert("Start Tidak Boleh Kosong")
-    } else if(end == "") {
+    } else if (end == "") {
         return alert("End Tidak Boleh Kosong")
-    } else if(start > end) {
+    } else if (start > end) {
         return alert("End Date Tidak Boleh Kurang dari Start Date")
-    } else if(description == "") {
+    } else if (description == "") {
         return alert("description Tidak Boleh Kosong")
     }
-    
+
     let blog = {
         title,
         start,
         end,
-        postAt:new Date(),
+        postAt: new Date(),
         description,
         image,
         node,
@@ -59,15 +59,15 @@ function getBlog(event){
         react,
         typescript,
     }
-    
-    blogs.push(blog)    
+
+    blogs.push(blog)
     console.log(blogs)
     renderBlog()
 }
 
 function renderBlog() {
     document.getElementById("content").innerHTML = ""
-    for(let i = 0; i < blogs.length; i++) {
+    for (let i = 0; i < blogs.length; i++) {
         document.getElementById("content").innerHTML += `
         <div class="item">
             <div class="header">
@@ -81,10 +81,10 @@ function renderBlog() {
                 <label for="description" class="description">${blogs[i].description} </label>
             </div>
                 <div>
-                ${blogs[i].node ?  '<img src="./assets/node.png" alt="logo" class="logo">' : ''}
-                ${blogs[i].next ?  '<img src="./assets/next.png" alt="logo" class="logo">' : ''}
-                ${blogs[i].react ?  '<img src="./assets/react.png" alt="logo" class="logo">' : ''}
-                ${blogs[i].typescript ?  '<img src="./assets/typescript.png" alt="logo" class="logo">' : ''}
+                ${blogs[i].node ? '<img src="./assets/node.png" alt="logo" class="logo">' : ''}
+                ${blogs[i].next ? '<img src="./assets/next.png" alt="logo" class="logo">' : ''}
+                ${blogs[i].react ? '<img src="./assets/react.png" alt="logo" class="logo">' : ''}
+                ${blogs[i].typescript ? '<img src="./assets/typescript.png" alt="logo" class="logo">' : ''}
                 </div>
             <div class="contentButton">
                 <a href="#" class="tombol">edit</a>
@@ -97,37 +97,37 @@ function renderBlog() {
 function createDuration(start, end) {
     let distance = new Date(end) - new Date(start)
     // Valid
-    const dayDistance = Math.floor(distance / ( 24 * 60 * 60 * 1000 ))
-    const monthDistance = Math.floor(distance /( 30 * 24 * 60 * 60 * 1000 ))
-    const yearDistance = Math.floor(distance /( 12 * 30 * 24 * 60 * 60 * 1000 ))
+    const dayDistance = Math.floor(distance / (24 * 60 * 60 * 1000))
+    const monthDistance = Math.floor(distance / (30 * 24 * 60 * 60 * 1000))
+    const yearDistance = Math.floor(distance / (12 * 30 * 24 * 60 * 60 * 1000))
 
-    if( dayDistance > 0 && dayDistance <= 29 ){
+    if (dayDistance > 0 && dayDistance <= 29) {
         return `${dayDistance} Hari `
-    }else if(dayDistance >= 30 && monthDistance <= 12){ 
+    } else if (dayDistance >= 30 && monthDistance <= 12) {
         return monthDistance + " Bulan"
-    }else if(monthDistance >= 12){ 
+    } else if (monthDistance >= 12) {
         return yearDistance + " Tahun"
-    }else if(dayDistance >= 0 && dayDistance <= 24){ 
+    } else if (dayDistance >= 0 && dayDistance <= 24) {
         return "1 hari"
     }
- }
+}
 
-function getPosted(time){
+function getPosted(time) {
     const posted = new Date() - new Date(time)
-    const dayPosted = Math.floor(posted / ( 24 * 60 * 60 * 1000 ))
-    if(dayPosted > 0) {
+    const dayPosted = Math.floor(posted / (24 * 60 * 60 * 1000))
+    if (dayPosted > 0) {
         return dayPosted + " day ago"
-    }else {
-        const hourPosted = Math.floor(posted/ ( 60* 60* 1000))
-        if(hourPosted > 0 ){
+    } else {
+        const hourPosted = Math.floor(posted / (60 * 60 * 1000))
+        if (hourPosted > 0) {
             return hourPosted + " hour ago"
-        }else {
-            const minutesPosted = Math.floor(posted / ( 60 * 1000))
-            if(minutesPosted > 0 ){
+        } else {
+            const minutesPosted = Math.floor(posted / (60 * 1000))
+            if (minutesPosted > 0) {
                 return minutesPosted + " minutes ago"
-            } else{
-                const secondPosted = Math.floor(posted/1000)
-                if(secondPosted > 0) {
+            } else {
+                const secondPosted = Math.floor(posted / 1000)
+                if (secondPosted > 0) {
                     return secondPosted + " second ago"
                 }
             }

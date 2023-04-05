@@ -8,15 +8,30 @@
         <nav>
             <div class="nav-left">
                 <ul>
-                    <img src="./assets/logo.png" alt="logo" >
+                    <img class="dumbLogo" src="./assets/logo.png" alt="logo" >
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./myProject.html">My Project</a></li>
                 </ul>
             </div>
             <div class="nav-right">
-                <a href="./contactMe.html">Contact Me</a>
+                <div>
+                    <a class="right" href="./contactMe.html">Contact Me</a>
+                </div>
+                <div class="burger" >
+                    <button id="button" href="" class="toggle-button" >
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
             </div>
         </nav>
+        <div class="mobileNav" id="mobileNav">
+            <a href="./index.html">Home</a>
+            <a href="./myProject.html">My Project</a>
+            <a class="buttonContact" href="./contactMe.html">Contact Me</a>
+        </div>
+
         <div class="bodyDetail">
             <p class="head">Phyton Jadi Bahasa Pemrograman Terpopuler di Dunia, Ini Alasannya</p>
             <div class="contentDetail">
@@ -104,6 +119,7 @@
               </div>
         </div>
     </body>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
     <script src="./js/scripts.js">
         
     </script>
