@@ -1,48 +1,20 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Home</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <style>
-    .container{
-        margin: 0%
-    }
-    
-    @media only screen and (max-width:650px) {
-        .bodyProj{
-            display: flex;
-            flex-direction: column;
-            margin: 0%
-        }
-        .container{
-            display: flex;
-            flex-direction: column;
-            margin: 0 10%;
-            gap: 10px;
-        }
+<html lang="en">
 
-        .BP{
-        grid-template-columns: auto auto;
-    }
-
-    }
-
-    @media only screen and (max-width:700px) {
-    .BP{
-        grid-template-columns: auto auto;
-    }
-}
-
-    </style>
-    <link rel="stylesheet" href="./css/style.css">
-    <body class="" onload="test()">
-        <nav>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/navbar.css">
+<body onload="test()">
+    <div class="index">
+        <nav class="navbar">
             <div class="nav-left">
                 <ul>
-                    <img class="dumbLogo" src="./assets/logo.png" alt="logo" >
+                    <img class="dumbLogo" src="./assets/logo.png" alt="logo">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./myProject.html" class="active">My Project</a></li>
                     <li><a href="./testimonial.html">Testimonial</a></li>
@@ -52,8 +24,8 @@
                 <div>
                     <a class="right" href="./contactMe.html">Contact Me</a>
                 </div>
-                <div class="burger" >
-                    <button id="button" href="" class="toggle-button" >
+                <div class="burger">
+                    <button id="button" href="" class="toggle-button">
                         <span class="bar"></span>
                         <span class="bar"></span>
                         <span class="bar"></span>
@@ -61,74 +33,73 @@
                 </div>
             </div>
         </nav>
-        <div class="mobileNav" id="mobileNav">
+        <div class="mobileNav shadow" id="mobileNav">
             <a href="./index.html">Home</a>
             <a href="./myProject.html" class="active">My Project</a>
             <a href="./testimonial.html">Testimonial</a>
-            <a class="buttonContact" href="./contactMe.html">Contact Me</a>
+            <a href="./contactMe.html">Contact Me</a>
         </div>
+    </div>
 
-        <center><h1>ADD MY PROJECT</h1></center>
-        <div class="container">
-        <form class="formP" onsubmit="getBlog(event)">
-            <div class='field'>
-                <label>Project Name</label>
-                <input type="text" class="text-input shadow" id="title">
-            </div>
-            <div class="field field2">
-                <div class=''>
-                    <label>Start Date</label>
-                    <input type="date" class="text-input shadow" id="start">
-                </div>
-                <div class=''>
-                    <label>End Date</label>
-                    <input type="date" class="text-input shadow" id="end">
-                </div>
-            </div>
-            <div class='field'>
-                <label>Description</label> 
-                <textarea name="description" id="description" cols="30" rows="5" class="text-input shadow" style="resize:none;"></textarea>
-            </div>
-            <div class='field'>
-                <label>Technologies</label>
-            </div>
-            <div class='field cek'>
+    
+    <div class="container-proj">
+        <center><h1>Add My Project</h1></center>
+        <form onsubmit="getBlog(event)">
+            <label for="">Title</label>
+            <input type="text" name="title" id="title" class="text-input shadow">
+            <div class="half">
                 <div>
-                    <input type="checkbox" class="inputBox shadow" id="nodeBox">
-                    <label for="nodeCheckbox">Node Js</label>
+                    <label for="">Start Date</label>
+                    <input type="date" name="start" id="start" class="text-input shadow">
                 </div>
                 <div>
-                    <input type="checkbox" class="inputBox shadow" value="next" id="nextBox">
-                    <label for="nextCheckbox">Next Js</label>
-                </div>
-                <div>
-                    <input type="checkbox" class="inputBox shadow" value="react" id="reactBox">
-                    <label for="showImage">React Js</label>
-                </div>
-                <div>
-                    <input type="checkbox" class="inputBox shadow" value="typeScript" id="typeBox">
-                    <label for="typeScriptCheckbox">TypeScript</label>
+                    <label for="">End Date</label>
+                    <input type="date" name="End" id="end" class="text-input shadow">
                 </div>
             </div>
-            <div class="field">
-                <label>Upload Image</label>
-                <input type="file" class="text-input shadow" id="img" required>
+            <label for="">Description</label>
+            <textarea name="description" id="description" rows="5" class="text-input shadow"></textarea>
+            <div class="tech-area">
+                <label for="">Technologies</label>
+                <div class="Tech">
+                    <div class="box-area">
+                        <input type="checkbox" name="react" id="nodeBox" class="box-input shadow">
+                        <label for="">Node</label>
+                    </div>
+                    <div class="box-area">
+                        <input type="checkbox" name="next" id="nextBox" class="box-input shadow">
+                        <label for="">Next</label>
+                    </div>
+                    <div class="box-area">
+                        <input type="checkbox" name="react" id="reactBox" class="box-input shadow">
+                        <label for="">React</label>
+                    </div>
+                    <div class="box-area">
+                        <input type="checkbox" name="react" id="typeBox" class="box-input shadow">
+                        <label for="">TypeScript</label>
+                    </div>
+                </div>
             </div>
-            <div class="field">
-                <button type="submit" class="submitProject shadow" >submit</button>
+            <label for="">Upload Image</label>
+            <input type="file" name="" id="img" class="text-input shadow" required>
+            <div class="submit-area">
+                <button type="submit" class="submit shadow">submit</button>
             </div>
         </form>
+    </div>
+    
+    <div class="container-my-proj">
+        <center><h1>My Project</h1></center>
+        <div class="card-area" id="content">
+            
         </div>
+    </div>
 
-        <div class="bodyProject">
-            <center><h1>MY PROJECT</h1></center>
-            <div class="BP" id="content">
-                
-            </div>
-        </div>
+    
+    
+</body>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src="./js/navbar.js"></script>
+<script src="./js/myProject.js"></script>
 
-    </body>
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-    <script src="./js/navbar.js"></script>
-    <script src="./js/myProject.js"></script>
 </html>

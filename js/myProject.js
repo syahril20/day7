@@ -69,28 +69,33 @@ function renderBlog() {
     document.getElementById("content").innerHTML = ""
     for (let i = 0; i < blogs.length; i++) {
         document.getElementById("content").innerHTML += `
-        <div class="item">
-            <div class="header">
-                <img src="${blogs[i].image}" alt="img" class="image">
-                <a href="./projectDetail.html" for="name" class="nameProj">${blogs[i].title}</a>
-                <br>
-                <label for="duration" class="duration">durasi : ${createDuration(blogs[i].start, blogs[i].end)}</label><br>
-                <label for="durationT" class="duration">${getPosted(blogs[i].postAt)}</label>
-            </div>
-            <div class="itemContent">
-                <label for="description" class="description">${blogs[i].description} </label>
-            </div>
-                <div>
-                ${blogs[i].node ? '<img src="./assets/node.png" alt="logo" class="logo">' : ''}
-                ${blogs[i].next ? '<img src="./assets/next.png" alt="logo" class="logo">' : ''}
-                ${blogs[i].react ? '<img src="./assets/react.png" alt="logo" class="logo">' : ''}
-                ${blogs[i].typescript ? '<img src="./assets/typescript.png" alt="logo" class="logo">' : ''}
+        <div class="card-box">
+                <div class="header">
+                    <img src="${blogs[i].image}" alt="">
+                    <a href="projectDetail.html">${blogs[i].title}</a>
+                    <label>durasi : ${createDuration(blogs[i].start, blogs[i].end)}</label>
+                    <label>${getPosted(blogs[i].postAt)}</label>
                 </div>
-            <div class="contentButton">
-                <a href="#" class="tombol">edit</a>
-                <a href="#" class="tombol">delete</a>
-            </div>
-        </div>`
+                <div class="content">
+                    <p>${blogs[i].description}</p>
+                </div>
+                <div class="footer">
+                    <div class="logo-area">
+                    ${blogs[i].node ? '<img src="./assets/node.png" alt="logo" class="tech-logo">' : ''}
+                    ${blogs[i].next ? '<img src="./assets/next.png" alt="logo" class="tech-logo">' : ''}
+                    ${blogs[i].react ? '<img src="./assets/react.png" alt="logo" class="tech-logo">' : ''}
+                    ${blogs[i].typescript ? '<img src="./assets/typescript.png" alt="logo" class="tech-logo">' : ''}
+                    </div>
+                    <div class="button-area">
+                        <div>
+                            <a href="" class="foot-button">edit</a>
+                        </div>
+                        <div>
+                            <a href="" class="foot-button">delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>`
     }
 }
 
